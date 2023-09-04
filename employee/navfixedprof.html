@@ -1,0 +1,124 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+     <link href="../css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- MetisMenu CSS -->
+    <link href="../css/metisMenu.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link href="../css/sb-admin-2.css" rel="stylesheet"/>
+   <link href="../css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    
+  <!--<link href="js/dataTables.bootstrap.css" rel="stylesheet">
+    <link href="js/dataTables.responsive.css" rel="stylesheet">-->
+</head>
+<body>
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-fixed-top navbar-static-top" role="navigation" style="margin-bottom: 0;background:#ad1111">
+	<div class="navbar-header">
+		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		</button>
+        <a class="navbar-brand" style="color:#ccc">EMPLOYEE Management SYSTEM</a>
+	</div>
+	<!-- /.navbar-header -->
+
+	<ul class="nav navbar-top-links navbar-right"> 
+        <span style="color:#ccc">Welcome: <% Response.Write(Session("user"))%> </span>
+		<li class="dropdown">
+
+			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+				<i class="fa fa-user fa-fw"></i> <i class="fa fa-caret-down"></i>
+			</a>
+			<ul class="dropdown-menu dropdown-user">
+				<li><a  href="#myModal" data-toggle="modal"><i class="fa fa-sign-out fa-fw"></i> Logout</a></li>
+				</ul>
+				<!-- /.dropdown-user -->
+			</li>
+			<!-- /.dropdown -->
+		</ul>
+		<!-- /.navbar-top-links -->
+
+
+		<div class="navbar-default sidebar" role="navigation">
+			<div class="sidebar-nav navbar-collapse">
+				<ul class="nav" id="side-menu" >
+					<li>
+						<asp:LinkButton ID="LinkButton3"  runat="server" Font-Underline="false" PostBackUrl="~/employee/Dashboard.aspx"><i class="fa fa-dashboard fa-fw"></i> DASHBOARD</asp:LinkButton>
+					</li>
+                    <li>
+                      <asp:LinkButton ID="btnYourProfile" class="active" runat="server" Font-Underline="false" PostBackUrl="~/employee/yourprofile.aspx"><i class="fa fa-user fa-fw"></i> PROFILE</asp:LinkButton>
+					</li>  
+					<li>
+					    <asp:LinkButton ID="btnAttendance" runat="server" Font-Underline="false" PostBackUrl="~/employee/attendancelogs.aspx"><i class="fa fa-list fa-fw"></i> ATTENDANCE</asp:LinkButton>
+					</li>
+                    <li>
+					<asp:LinkButton ID="btnChangePassword" runat="server" Font-Underline="false" PostBackUrl="~/employee/setting.aspx"><i class="fa fa-key fa-fw"></i> SETTING</asp:LinkButton>
+					</li>
+                    <!--
+                    <li>
+					<asp:LinkButton ID="LinkButton2" runat="server" Font-Underline="false" PostBackUrl="~/adminReports.aspx"><i class="fa fa-hand-grab-o fa-fw"></i> Reports</asp:LinkButton>
+					</li>-->
+                    </ul>
+				</div>
+			</div>
+			<!-- /.navbar-static-side -->
+		</nav>
+       <!-- jQuery -->
+    <script src="../js/jquery.min.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="../js/bootstrap.min.js"></script>
+
+    <!-- Metis Menu Plugin JavaScript -->
+    <script src="../js/metisMenu.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="../js/sb-admin-2.js"></script>
+  
+  <link href="../css/responsivetable.css" rel="stylesheet">
+    <link href="../css/dataTables.bootstrap.css" rel="stylesheet">
+    <script src="../js/responsivetable.js"></script>
+    <script src="../js/dataTables.bootstrap.min.js"></script>
+     <!--   <script src="js/jquery.dataTables.min.js"></script>
+        <script src="js/dataTables.bootstrap.min.js"></script>
+        <script src="js/dataTables.responsive.js"></script>
+
+          <script>
+              $(document).ready(function () {
+                  $('#GridView1').DataTable({
+                      responsive: true
+                  });
+              });
+        </script>-->
+
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel">Please confirm!</h4>
+                </div>
+                <div class="modal-body">
+                    <p> Thanks, <b><% Response.Write(Session("user"))%>.</b> Are you sure you want to logout now? </p>
+                </div>
+                <div class="modal-footer">
+                     <asp:LinkButton ID="logout" OnClick="logout_click" CssClass="btn btn-danger" runat="server">Confirm</asp:LinkButton>
+                   <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+              </div>
+            </div>
+            <!-- /.modal-content -->
+        </div>
+        <!-- /.modal-dialog -->
+    </div>
+
+
+    
+</body>
+</html>

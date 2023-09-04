@@ -1,0 +1,40 @@
+﻿body {
+}
+
+
+#register {
+    display:none;
+    margin:0 auto;
+}
+#login {
+   
+}
+P {
+    cursor: pointer;
+    color:dodgerblue;
+    text-decoration: underline;
+    text-align:left;
+
+}
+/*#btnRegister {
+    background: #cc0044;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+}*/
+/*#btnLogin {
+     background: #cc0044;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    color: #fff;
+}*/
